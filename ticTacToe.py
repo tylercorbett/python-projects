@@ -1,6 +1,6 @@
 #Tic-Tac-Toe by Tyler Corbett (thetylercorbett@gmail.com) Oct. 2018
 
-#GLOBAL VARIABLES
+# GLOBAL VARIABLES
 currentTurn = 'X'
 
 board = {
@@ -10,8 +10,9 @@ board = {
 }
 
 gameIsWon = False
+###
 
-#FUNCTIONS
+# FUNCTIONS
 
 def printBoard():
     print('\n')
@@ -31,6 +32,8 @@ def changeTurn():
 def getInput():
     nextMove = input('What space would you like to play? ')
     board[nextMove] = currentTurn
+
+###
 
 def checkForWinner():
     global gameIsWon
@@ -105,8 +108,13 @@ def checkForWinner():
         gameIsWon = True
     ###
 
+# Run the game
 while (gameIsWon == False):
     changeTurn()
     printBoard()
     getInput()
     checkForWinner()
+###
+
+
+# Create function to check if input has been used already or is invalid
