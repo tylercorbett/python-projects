@@ -31,7 +31,14 @@ def changeTurn():
 
 def getInput():
     nextMove = input('What space would you like to play? ')
-    board[nextMove] = currentTurn
+    if (nextMove not in board):
+        print('Enter valid input')
+        getInput()
+    elif (board[nextMove] == 'X' or board[nextMove] == 'O'):
+        print('That space is already taken!')
+        getInput()
+    else:
+        board[nextMove] = currentTurn
 
 ###
 
